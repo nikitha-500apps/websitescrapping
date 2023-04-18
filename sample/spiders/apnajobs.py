@@ -6,9 +6,9 @@ class ApnajobsSpider(scrapy.Spider):
     allowed_domains = ["apna.co"]
     
     def start_requests(self):
-          for page in range(1, 11):
+          for page in range(1, 10):
                 url = f"https://apna.co/jobs/full_time-jobs?page={page}"
-          yield scrapy.Request(url=url, callback=self.parse)
+                yield scrapy.Request(url=url, callback=self.parse)
         
     def parse(self, response):
         job_links_data = response.xpath("//div[@class='styles__JobDetails-sc-1eqgvmq-1 koxkvV']/h3/a/@href").getall()
