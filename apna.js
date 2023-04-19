@@ -25,7 +25,7 @@ async function start() {
     const page = await browser.newPage();
     await page.goto(`https://apna.co/jobs/full_time-jobs?page=2=${i}`);
     await page.screenshot({ path: 'Times.png' });
-    const dataHandles = await page.$$('.styles__JobDetails-sc-1eqgvmq-1');
+    const dataHandles = await page.$$('.styles__JobDetails-sc-1eqgvmq');
 
 
     for (const datahandle of dataHandles) {
